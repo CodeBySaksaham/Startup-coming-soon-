@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Startup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6, #14b8a6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: gradientMove 4s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white flex items-center justify-center min-h-screen relative">
+
+
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-20"></div>
+
+
+  <div class="relative max-w-2xl w-full bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-10 text-center border border-teal-500/20">
+    
+    
+    <h1 class="text-4xl md:text-5xl font-bold text-teal-400 tracking-wide mb-6">StartupX</h1>
+
+    
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">🚀 Coming Soon</h2>
+    <p class="text-gray-300 mb-8 text-lg">
+      We’re crafting something innovative. Stay tuned and be the first to experience it!
+    </p>
+
+    
+    <div id="countdown" class="flex justify-center space-x-6 mb-10 text-lg font-semibold text-purple-300"></div>
+
+    
+    <form class="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+      <input type="email" placeholder="Enter your email"
+        class="px-4 py-3 rounded-lg w-full sm:w-2/3 focus:outline-none text-gray-900" required>
+      <button type="submit"
+        class="px-6 py-3 rounded-lg bg-teal-500 hover:bg-teal-600 transition text-white font-semibold shadow-lg">
+        Notify Me
+      </button>
+    </form>
+
+    
+    <div class="flex justify-center space-x-6 text-gray-400">
+      <a href="#" class="hover:text-teal-400 transition"><i class="fab fa-twitter text-2xl"></i></a>
+      <a href="#" class="hover:text-teal-400 transition"><i class="fab fa-instagram text-2xl"></i></a>
+      <a href="#" class="hover:text-teal-400 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+    </div>
+
+    
+    <p class="mt-8 text-sm text-gray-400">© 2025 StartupX. All rights reserved.</p>
+  </div>
+
+  
+  <script src="https://kit.fontawesome.com/2f9a46f6d4.js" crossorigin="anonymous"></script>
+
+  
+  <script>
+    const countdown = document.getElementById("countdown");
+    const launchDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `
+        <div><span class="text-3xl text-teal-400">${days}</span><br>Days</div>
+        <div><span class="text-3xl text-teal-400">${hours}</span><br>Hours</div>
+        <div><span class="text-3xl text-teal-400">${minutes}</span><br>Mins</div>
+        <div><span class="text-3xl text-teal-400">${seconds}</span><br>Secs</div>
+      `;
+    }, 1000);
+  </script>
+</body>
+</html>
